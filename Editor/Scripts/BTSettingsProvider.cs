@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.UIElements;
-using LootLocker;
-using System.Drawing.Printing;
 
 public class BTSettingsProvider : SettingsProvider
 {

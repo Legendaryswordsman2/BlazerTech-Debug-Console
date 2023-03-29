@@ -21,7 +21,9 @@ public class BTSettingsSO : ScriptableObject
 
     [Space]
 
+    [Tooltip("The input system to use to toggle the debug console on/off")]
     public ActiveInputSystem activeInputSystem = ActiveInputSystem.OldInputSystem;
+    [Tooltip("The keybind used to open/close the debug console")]
     public KeyCode toggleConsoleKey = KeyCode.F2;
 
     //Behind the scenes
