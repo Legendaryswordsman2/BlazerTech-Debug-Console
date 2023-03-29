@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LogConsole : MonoBehaviour
+namespace BlazerTech
 {
-    public event EventHandler OnEnabled;
-
-    private void OnEnable()
+    public class LogConsole : MonoBehaviour
     {
-        OnEnabled?.Invoke(this, EventArgs.Empty);
+        public event EventHandler OnEnabled;
+
+        private void OnEnable()
+        {
+            OnEnabled?.Invoke(this, EventArgs.Empty);
+        }
     }
 }

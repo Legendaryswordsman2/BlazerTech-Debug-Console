@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 2076894955493311367}
   - component: {fileID: 2076894955493311366}
   - component: {fileID: 2076894955493311365}
-  - component: {fileID: 2076894955493311362}
+  - component: {fileID: 789970291082700963}
   m_Layer: 5
   m_Name: Log Console Canvas
   m_TagString: Untagged
@@ -342,7 +342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3102efa327ec64fa35701e0775d0ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Settings>k__BackingField: {fileID: 0}
   logConsole: {fileID: 2076894955531785245}
   logConsoleScrollbar: {fileID: 2076894955927529983}
   logConsoleContents: {fileID: 2076894955743964682}
@@ -351,7 +350,7 @@ MonoBehaviour:
   SliderBottomPOS: {fileID: 2076894955156913149}
   logPrefab: {fileID: 1592129620056846139, guid: 695525dda0f3eea4db673f7d475e656e, type: 3}
   bottomOfListprefab: {fileID: 204010715774722527, guid: 0ac42f1a8782616419f17e0105ffee57, type: 3}
---- !u!114 &2076894955493311362
+--- !u!114 &789970291082700963
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
