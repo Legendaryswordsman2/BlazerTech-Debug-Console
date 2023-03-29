@@ -12,7 +12,7 @@ public class LogManager : MonoBehaviour
 {
     public static LogManager Instance;
 
-    [field: SerializeField] public BTSettingsSO Settings { get; private set; }
+    public BTSettingsSO Settings { get; private set; }
 
     [Space]
     readonly List<LogData> totalLogs = new List<LogData>();

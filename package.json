@@ -2,7 +2,7 @@
   "name": "com.graymatterstudios.blazertechdebugconsole",
   "version": "1.0.0",
   "displayName": "BlazerTech Debug Console",
-  "description": "Adds an in game debug console to make debugging easier",
+  "description": "The BlazerTech Debug Console is an in-game console for Unity to make debugging games easier.",
   "unity": "2021.3",
   "unityRelease": "8f1",
   "licensesUrl": "",
