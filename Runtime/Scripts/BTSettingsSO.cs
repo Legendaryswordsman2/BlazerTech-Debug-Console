@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using UnityEditor;
 using UnityEngine;
 
 public enum ActiveInputSystem { None, OldInputSystem}
@@ -14,11 +16,56 @@ public class BTSettingsSO : ScriptableObject
     public int logFileCap = 5;
     [Tooltip("The color of the debug consoles background")]
     public Color backgroundColor = new Color(0, 0, 0, 0.55f);
-    [Tooltip("Clears all logs when the current scene changes")]
+    [Tooltip("Whether or not to clear the console of all logs when the current scene changes")]
     public bool clearConsoleOnSceneChange = true;
 
     [Space]
 
     public ActiveInputSystem activeInputSystem = ActiveInputSystem.OldInputSystem;
     public KeyCode toggleConsoleKey = KeyCode.F2;
+
+    //Behind the scenes
+    private static BTSettingsSO settingsInstance;
+
+    public static BTSettingsSO Get()
+    {
+        if(settingsInstance != null)
+        {
+            Debug.Log("Found existing settings");
+            return settingsInstance;
+        }
+        else
+        {
+            //Try to load it
+            settingsInstance = Resources.Load<BTSettingsSO>("BTSettings");
+
+            if (settingsInstance != null)
+            {
+                Debug.Log("Got reference to existing settings");
+                return settingsInstance;
+            }
+        }
+
+        // Create a new Config
+        settingsInstance = ScriptableObject.CreateInstance<BTSettingsSO>();
+
+        // Folder needs to exist for Unity to be able to create an asset in it
+        string dir = Application.dataPath + "/BlazerTech Debug Console/Resources";
+
+        // If directory does not exist, create it
+        if (!Directory.Exists(dir))
+        {
+            Directory.CreateDirectory(dir);
+        }
+
+        // Create config asset
+        string configAssetPath = "Assets/BlazerTech Debug Console/Resources/BTSettings.asset";
+        AssetDatabase.CreateAsset(settingsInstance, configAssetPath);
+        EditorApplication.delayCall += AssetDatabase.SaveAssets;
+        AssetDatabase.Refresh();
+
+        Debug.Log("Created new settings");
+
+        return settingsInstance;
+    }
 }

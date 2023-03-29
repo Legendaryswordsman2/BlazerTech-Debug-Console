@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3102efa327ec64fa35701e0775d0ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Settings>k__BackingField: {fileID: 11400000, guid: eb71d909b4f3f9c4e82e9e80d19d7909, type: 2}
+  <Settings>k__BackingField: {fileID: 0}
   logConsole: {fileID: 2076894955531785245}
   logConsoleScrollbar: {fileID: 2076894955927529983}
   logConsoleContents: {fileID: 2076894955743964682}

@@ -45,6 +45,8 @@ public class LogManager : MonoBehaviour
     {
         Instance = this;
 
+        Settings = BTSettingsSO.Get();
+
         Image backgroundImage = background.GetComponent<Image>();
         backgroundImage.color = Settings.backgroundColor;
         logConsoleComponent = logConsole.GetComponent<LogConsole>();
