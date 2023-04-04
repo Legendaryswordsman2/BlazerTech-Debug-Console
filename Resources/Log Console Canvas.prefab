@@ -223,7 +223,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -25.5}
+  m_AnchoredPosition: {x: 0, y: -45.8}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &2076894955493311364
@@ -349,7 +349,6 @@ MonoBehaviour:
   background: {fileID: 1052253284997747769}
   SliderBottomPOS: {fileID: 2076894955156913149}
   logPrefab: {fileID: 1592129620056846139, guid: 695525dda0f3eea4db673f7d475e656e, type: 3}
-  bottomOfListprefab: {fileID: 204010715774722527, guid: 0ac42f1a8782616419f17e0105ffee57, type: 3}
 --- !u!114 &789970291082700963
 MonoBehaviour:
   m_ObjectHideFlags: 0

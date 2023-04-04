@@ -17,14 +17,6 @@ namespace BlazerTech
             return new SerializedObject(settings);
         }
 
-        const string k_additiveOptionPref = "ShowAdditiveSceneOption";
-
-        public static bool AdditiveOptionEnabled
-        {
-            get { return EditorPrefs.GetBool(k_additiveOptionPref, true); }
-            set { EditorPrefs.SetBool(k_additiveOptionPref, value); }
-        }
-
         public BTSettingsProvider(string path, SettingsScope scope)
             : base(path, scope)
         { }
@@ -85,34 +77,15 @@ namespace BlazerTech
             }
 
             m_CustomSettings.ApplyModifiedProperties();
-
-            ////GUILayout.Space(20f);
-
-            //bool ClearConsoleOnSceneChangeToggle = EditorGUILayout.Toggle("Clear Console On Scene Change", settings.clearConsoleOnSceneChange);
-            //if(settings.clearConsoleOnSceneChange != ClearConsoleOnSceneChangeToggle)
-            //{
-            //    settings.clearConsoleOnSceneChange = ClearConsoleOnSceneChangeToggle;
-            //}
-
-            //bool enabled = AdditiveOptionEnabled;
-            //bool value = EditorGUILayout.Toggle("Additive Option", enabled, GUILayout.Width(200f));
-            //if(enabled != value)
-            //    AdditiveOptionEnabled = value;
         }
 
 
         public override void OnActivate(string searchContext, VisualElement rootElement)
         {
-            Debug.Log("Getting settings instance");
+            if(settings == null)
             settings = BTSettingsSO.Get();
 
             m_CustomSettings = GetSerializedSettings();
-
-            //bool ClearConsoleOnSceneChangeToggle = EditorGUILayout.Toggle("Clear Console On Scene Change", settings.clearConsoleOnSceneChange);
-            //if (ClearConsoleOnSceneChangeToggle != settings.clearConsoleOnSceneChange)
-            //{
-            //    ClearConsoleOnSceneChangeToggle = settings.clearConsoleOnSceneChange;
-            //}
         }
 
         [SettingsProvider]

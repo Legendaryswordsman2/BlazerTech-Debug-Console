@@ -34,13 +34,14 @@ namespace BlazerTech
 
             switch (type)
             {
+                case LogType.Log:
+                    text.color = Color.white;
+                    break;
                 case LogType.Error:
                     text.color = Color.red;
                     break;
                 case LogType.Warning:
                     text.color = Color.yellow;
-                    break;
-                case LogType.Log:
                     break;
                 case LogType.Exception:
                     text.color = Color.red;

@@ -9,7 +9,6 @@ using System.Collections;
 
 namespace BlazerTech
 {
-
     [DefaultExecutionOrder(-100000)]
     public class LogManager : MonoBehaviour
     {
@@ -32,7 +31,6 @@ namespace BlazerTech
         [SerializeField] GameObject background;
         [SerializeField] Transform SliderBottomPOS;
         [SerializeField] GameObject logPrefab;
-        [SerializeField] GameObject bottomOfListprefab;
 
         int logIndex;
         int baseLogsCount;
@@ -77,7 +75,13 @@ namespace BlazerTech
                 logs.Add(log);
             }
 
-            bottomListTransform = Instantiate(bottomOfListprefab, logConsoleContents.transform).transform;
+            var newGO = new GameObject();
+            newGO.name = "Bottom POS";
+            newGO.transform.SetParent(logConsoleContents.transform);
+            RectTransform newGORectTransform = newGO.AddComponent<RectTransform>();
+            newGORectTransform.sizeDelta = new Vector2(0, 1);
+            bottomListTransform = newGO.transform;
+            //bottomListTransform = Instantiate(new GameObject(), logConsoleContents.transform).transform;
 
             Application.logMessageReceivedThreaded += OnLogMessageReceived;
         }
@@ -158,7 +162,7 @@ namespace BlazerTech
             bool logsfull = CheckLogCap();
 
             if (logsfull)
-                logs[logs.Count].SetupLog(logMessage, logDetails, LogType.Log);
+                logs[logs.Count - 1].SetupLog(logMessage, logDetails, LogType.Log);
             else
             {
                 logs[logIndex].SetupLog(logMessage, logDetails, LogType.Log);
@@ -180,7 +184,7 @@ namespace BlazerTech
             bool logsfull = CheckLogCap();
 
             if (logsfull)
-                logs[logs.Count].SetupLog(warningMessage, warningDetails, LogType.Warning);
+                logs[logs.Count - 1].SetupLog(warningMessage, warningDetails, LogType.Warning);
             else
             {
                 logs[logIndex].SetupLog(warningMessage, warningDetails, LogType.Warning);
@@ -202,7 +206,7 @@ namespace BlazerTech
             bool logsfull = CheckLogCap();
 
             if (logsfull)
-                logs[logs.Count].SetupLog(errorMessage, errorDetails, LogType.Error);
+                logs[logs.Count - 1].SetupLog(errorMessage, errorDetails, LogType.Error);
             else
             {
                 logs[logIndex].SetupLog(errorMessage, errorDetails, LogType.Error);
@@ -224,7 +228,7 @@ namespace BlazerTech
             bool logsfull = CheckLogCap();
 
             if (logsfull)
-                logs[logs.Count].SetupLog(exception, exceptionDetails, LogType.Exception);
+                logs[logs.Count - 1].SetupLog(exception, exceptionDetails, LogType.Exception);
             else
             {
                 logs[logIndex].SetupLog(exception, exceptionDetails, LogType.Exception);

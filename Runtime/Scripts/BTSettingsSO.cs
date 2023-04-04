@@ -34,20 +34,14 @@ namespace BlazerTech
         public static BTSettingsSO Get()
         {
             if (settingsInstance != null)
-            {
-                Debug.Log("Found existing settings");
                 return settingsInstance;
-            }
             else
             {
                 //Try to load it
                 settingsInstance = Resources.Load<BTSettingsSO>("BTSettings");
 
                 if (settingsInstance != null)
-                {
-                    Debug.Log("Got reference to existing settings");
                     return settingsInstance;
-                }
             }
 
             // Create a new Config
@@ -67,8 +61,6 @@ namespace BlazerTech
             AssetDatabase.CreateAsset(settingsInstance, configAssetPath);
             EditorApplication.delayCall += AssetDatabase.SaveAssets;
             AssetDatabase.Refresh();
-
-            Debug.Log("Created new settings");
 
             return settingsInstance;
         }
