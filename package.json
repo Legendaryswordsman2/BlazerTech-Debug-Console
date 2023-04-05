@@ -11,5 +11,12 @@
   },
   "dependencies": {
     "com.unity.textmeshpro": "3.0.6"
-  }
+  },
+  "samples": [
+    {
+      "displayName": "Debug Console Example",
+      "description": "An example scene demonstrating how the BlazerTech Debug Console works",
+      "path": "Samples~/BlazerTech Debug Console Example"
+    }
+  ]
 }
