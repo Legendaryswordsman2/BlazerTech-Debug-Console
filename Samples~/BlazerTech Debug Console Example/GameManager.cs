@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace BlazerTech
-{
     public class GameManager : MonoBehaviour
     {
         int totalLogsCreated;
@@ -34,4 +32,3 @@ namespace BlazerTech
             Debug.LogError("Error: " + totalLogsCreated);
         }
     }
-}
