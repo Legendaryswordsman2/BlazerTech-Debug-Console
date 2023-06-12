@@ -4,6 +4,7 @@ using UnityEngine.UIElements;
 
 namespace BlazerTech
 {
+#if UNITY_EDITOR
     public class BTSettingsProvider : SettingsProvider
     {
         private static BTSettingsSO settings;
@@ -94,4 +95,6 @@ namespace BlazerTech
             return new BTSettingsProvider("Project/BlazerTech Debug Console", SettingsScope.Project);
         }
     }
+
+#endif
 }

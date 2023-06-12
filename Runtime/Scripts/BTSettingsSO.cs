@@ -57,10 +57,12 @@ namespace BlazerTech
             }
 
             // Create config asset
+#if UNITY_EDITOR
             string configAssetPath = "Assets/BlazerTech Debug Console/Resources/BTSettings.asset";
             AssetDatabase.CreateAsset(settingsInstance, configAssetPath);
             EditorApplication.delayCall += AssetDatabase.SaveAssets;
             AssetDatabase.Refresh();
+#endif
 
             return settingsInstance;
         }
