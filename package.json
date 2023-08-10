@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "displayName": "BlazerTech Debug Console",
   "description": "The BlazerTech Debug Console is an in-game console for Unity to make debugging games easier.",
-  "unity": "2021.3",
-  "unityRelease": "8f1",
+  "unity": "2022.3",
+  "unityRelease": "7f1",
   "author": {
     "name": "Gray Matter Studios"
   },
